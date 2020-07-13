@@ -1,0 +1,1757 @@
+S
+
+27 - Tobio Kageyama (Karasuno)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 5
+
+Game Sense - 5
+
+Technique - 5
+
+Speed - 4
+
+25 - Atsumu Miya (Inarizaki)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 5
+
+Technique - 5
+
+Speed - 4
+
+24 - Tohru Oikawa (Aoba Johsai)
+
+Power - 5
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 5
+
+Speed - 3
+
+23 - Keiji Akaashi (Fukurodani)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 4
+
+22 - Eita Semi (Shiratorizawa)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+22 - Aikichi Suwa (Kamomedai)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+21 - Itaru Shiramine (Sarukawa)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+20 - Michiru Usuri (Mujinazaka)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 4
+
+20 - Kenjiro Shirabu (Shiratorizawa)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+20 - Isumi Sakishima (Nohebi)
+
+Power - 3
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 4
+
+Speed - 3
+
+20 - Tamahiko Teshiro (Nekoma)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 4
+
+20 - Sakae Echigo (Tsubakihara)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 2
+
+19 - Kaname Moniwa (Date Tech)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+19 - Kanji Koganegawa (Date Tech)
+
+Power - 5
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 1
+
+Technique - 1
+
+Speed - 4
+
+19 - Takeharu Futamata (Johzenji)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 3
+
+18 - Kenma Kozume (Nekoma)
+
+Power - 1
+
+Jumping - 2
+
+Stamina - 2
+
+Game Sense - 5
+
+Technique - 5
+
+Speed - 3
+
+18 - Shigeru Yahaba (Aoba Johsai)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 2
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+18 - Kazumasa Hanayama (Wakutani Minami)
+
+Power - 4
+
+Jumping - 2
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 3
+
+16 - Koshi Sugawara (Karasuno)
+
+Power - 2
+
+Jumping - 2
+
+Stamina - 2
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 2
+
+16 - Yuzuru Komaki (Kakugawa)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 2
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 2
+
+WS
+
+26 - Korai Hoshiumi (Kamomedai)
+
+Power - 3
+
+Jumping - 5
+
+Stamina - 5
+
+Game Sense - 4
+
+Technique - 5
+
+Speed - 4
+
+24 - Kotaro Bokuto (Fukurodani)
+
+Power - 5
+
+Jumping - 4
+
+Stamina - 5
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+24 - Osamu Miya (Inarizaki)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 4
+
+24 - Takeru Nakashima (Wakutani Minami)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 5
+
+Game Sense - 3
+
+Technique - 4
+
+Speed - 4
+
+23 - Wakatoshi Ushijima (Shiratorizawa)
+
+Power - 5
+
+Jumping - 4
+
+Stamina - 5
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 3
+
+23 - Wakatsu Kiryu (Mujinazaka)
+
+Power - 5
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 4
+
+Speed - 3
+
+23 - Hajime Iwaizumi (Aoba Johsai)
+
+Power - 5
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+22 - Izuru Nozawa (Kamomedai)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+22 - Hitoshi Ginjima (Inarizaki)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+21 - Aran Ojiro (Inarizaki)
+
+Power - 5
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 2
+
+21 - Kenji Futakuchi (Date Tech)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+21 - Daichi Sawamura (Karasuno)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+21 - Akinori Konoha (Fukurodani)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 4
+
+21 - Tsutomu Goshiki (Shiratorizawa)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 4
+
+Speed - 3
+
+21 - Reon Ohira (Shiratorizawa)
+
+Power - 5
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 2
+
+21 - Yuji Terushima (Johzenji)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+21 - Takehito Sasaya (Date Tech)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 4
+
+Speed - 3
+
+21 - Subaru Hondo (Mujinazaka)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+21 - Kazuki Maruyama (Tsubakihara)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+21 - Yushi Maiko (Tsubakihara)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 3
+
+21 - Yuki Shiroishi (Wakutani Minami)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 3
+
+20 - Naoharu Ezota (Mujinazaka)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 3
+
+20 - Akira Kunimi (Aoba Johsai)
+
+Power - 3
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 5
+
+Technique - 3
+
+Speed - 3
+
+20 - Shohei Fukunaga (Nekoma)
+
+Power - 3
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+20 - Kazuma Numai (Nohebi)
+
+Power - 5
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 3
+
+20 - Suguru Daisho (Nohebi)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+20 - Kenro Fukatani (Sarukawa)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 4
+
+19 - Asahi Azumane (Karasuno)
+
+Power - 5
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 2
+
+19 - Kentaro Kyotani (Aoba Johsai)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 1
+
+Technique - 3
+
+Speed - 4
+
+19 - Yamato Sarukui (Fukurodani)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 2
+
+19 - Nobuyuki Kai (Nekoma)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+19 - Takahiro Hanamaki (Aoba Johsai)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 2
+
+19 - Naoyasu Kuguri (Nohebi)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 2
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 2
+
+19 - Yutaka Obara (Date Tech)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 4
+
+Speed - 2
+
+19 - Yoshiya Takachiho (Nohebi)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 2
+
+19 - Motoki Teradomari (Tsubakihara)
+
+Power - 5
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 2
+
+Speed - 2
+
+19 - Katsumichi Higashiyama (Johzenji)
+
+Power - 3
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 3
+
+19 - Iori Kanazawa (Sarukawa)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 2
+
+Speed - 2
+
+19 - Shunki Kawatabi (Wakutani Minami)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+18 - Ryunosuke Tanaka (Karasuno)
+
+Power - 5
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 1
+
+Technique - 2
+
+Speed - 3
+
+18 - Taketora Yamamoto (Nekoma)
+
+Power - 5
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 1
+
+Technique - 3
+
+Speed - 2
+
+18 - Shinsuke Kita (Inarizaki)
+
+Power - 2
+
+Jumping - 2
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 3
+
+18 - Taro Onagawa (Date Tech)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 2
+
+18 - Gao Hakuba (Kamomedai)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 2
+
+Speed - 3
+
+18 - Rintaro Numajiri (Johzenji)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 2
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 4
+
+18 - Soji Yamashiro (Sarukawa)
+
+Power - 3
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 4
+
+Speed - 2
+
+17 - Heisuke Riseki (Inarizaki)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 3
+
+17 - Aoi Himekawa (Tsubakihara)
+
+Power - 2
+
+Jumping - 2
+
+Stamina - 2
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+17 - Yoshiki Towada (Ohgiminami)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 3
+
+17 - Kaito Asamushi (Kakugawa)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 3
+
+16 - Chikara Ennoshita (Karasuno)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 2
+
+16 - Hisashi Kinoshita (Karasuno)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 3
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 4
+
+16 - Yudai Hyakuzawa (Kakugawa)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 2
+
+Technique - 1
+
+Speed - 2
+
+16 - Hayato Ikejiri (Tokonami)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 2
+
+16 - Yusho Sagae (Shiratorizawa)
+
+Power - 3
+
+Jumping - 3
+
+Stamina - 2
+
+Game Sense - 2
+
+Technique - 3
+
+Speed - 3
+
+MB
+
+23 - Sachiro Hirugami (Kamomedai)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 4
+
+22 - Tatsuki Washio (Fukurodani)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+21 - Takanobu Aone (Date Tech)
+
+Power - 5
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+20 - Tetsuro Kuroo (Nekoma)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 4
+
+20 - Nozomu Mami (Mujinazaka)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 2
+
+Technique - 3
+
+Speed - 4
+
+20 - Keisuke Unnan (Mujinazaka)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 4
+
+20 - Rintaro Suna (Inarizaki)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+20 - Kazuyoshi Bessho (Kamomedai)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 4
+
+19 - Issei Matsukawa (Aoba Johsai)
+
+Power - 4
+
+Jumping - 2
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 3
+
+19 - Eikichi Chigaya (Shinzen)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 4
+
+Speed - 3
+
+19 - Taichi Kawanishi (Shiratorizawa)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 3
+
+19 - So Inuoka (Nekoma)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 5
+
+Game Sense - 1
+
+Technique - 1
+
+Speed - 5
+
+19 - Yasushi Kamasaki (Date Tech)
+
+Power - 5
+
+Jumping - 2
+
+Stamina - 4
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 4
+
+19 - Teppei Naruko (Wakutani Minami)
+
+Power - 3
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 3
+
+18 - Satori Tendo (Shiratorizawa)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 2
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 3
+
+18 - Shoyo Hinata (Karasuno)
+
+Power - 1
+
+Jumping - 5
+
+Stamina - 5
+
+Game Sense - 1
+
+Technique - 1
+
+Speed - 5
+
+18 - Kei Tsukishima (Karasuno)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 5
+
+Technique - 3
+
+Speed - 3
+
+18 - Yutaro Kindaichi (Aoba Johsai)
+
+Power - 3
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 2
+
+Technique - 3
+
+Speed - 3
+
+18 - Ren Omimi (Inarizaki)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 3
+
+18 - Togo Iwamuro (Tsubakihara)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 2
+
+18 - Nobuyoshi Izaka (Johzenji)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 3
+
+18 - Hisahiko Wakura (Sarukawa)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 3
+
+17 - Lev Haiba (Nekoma)
+
+Power - 3
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 2
+
+Technique - 1
+
+Speed - 4
+
+17 - Akihiko Seguro (Nohebi)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 3
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 3
+
+17 - Kazuma Bobata (Johzenji)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 2
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+17 - Tomonari Shiga (Sarukawa)
+
+Power - 4
+
+Jumping - 2
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 2
+
+16 - Jingo Fukiage (Date Tech)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 2
+
+Speed - 2
+
+16 - Wataru Onaga (Fukurodani)
+
+Power - 3
+
+Jumping - 2
+
+Stamina - 4
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 3
+
+16 - Koji Hiroo (Nohebi)
+
+Power - 2
+
+Jumping - 2
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 3
+
+16 - Kazuhito Narita (Karasuno)
+
+Power - 2
+
+Jumping - 2
+
+Stamina - 2
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 3
+
+16 - Yoshitomo Atema (Tsubakihara)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 2
+
+Game Sense - 3
+
+Technique - 2
+
+Speed - 4
+
+15 - Tadashi Yamaguchi (Karasuno)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 2
+
+Game Sense - 3
+
+Technique - 2
+
+Speed - 3
+
+15 - Tsuyoshi Matsushima (Wakutani Minami)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 2
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 4
+
+Li
+
+23 - Yu Nishinoya (Karasuno)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 5
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 5
+
+22 - Haruki Komi (Fukurodani)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 5
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+22 - Hayato Yamagata (Shiratorizawa)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 5
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+22 - Kanbayashi (Kamomedai)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 4
+
+21 - Haruma Bishin (Mujinazaka)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+21 - Michinari Akagi (Inarizaki)
+
+Power - 4
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 3
+
+20 - Morisuke Yaku (Nekoma)
+
+Power - 1
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 4
+
+Technique - 4
+
+Speed - 4
+
+20 - Tomokazu Wajima (Sarukawa)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+20 - Kazuteru Akiu (Wakutani Minami)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 3
+
+Speed - 4
+
+19 - Shinji Watari (Aoba Johsai)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 3
+
+19 - So Akama (Nohebi)
+
+Power - 4
+
+Jumping - 3
+
+Stamina - 4
+
+Game Sense - 2
+
+Technique - 2
+
+Speed - 4
+
+19 - Akifumi Kaikake (Tsubakihara)
+
+Power - 3
+
+Jumping - 4
+
+Stamina - 4
+
+Game Sense - 3
+
+Technique - 2
+
+Speed - 3
+
+18 - Kai Akakura (Shiratorizawa)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 4
+
+Technique - 3
+
+Speed - 2
+
+17 - Kosuke Sakunami (Date Tech)
+
+Power - 1
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 2
+
+Technique - 3
+
+Speed - 4
+
+17 - Taishi Minamida (Kakugawa)
+
+Power - 2
+
+Jumping - 4
+
+Stamina - 3
+
+Game Sense - 3
+
+Technique - 2
+
+Speed - 3
+
+16 - Arata Tsuchiyu (Johzenji)
+
+Power - 2
+
+Jumping - 3
+
+Stamina - 2
+
+Game Sense - 4
+
+Technique - 2
+
+Speed - 3
+
+15 - Yuki Shibayama (Nekoma)
+
+Power - 1
+
+Jumping - 3
+
+Stamina - 2
+
+Game Sense - 3
+
+Technique - 2
+
+Speed - 4
