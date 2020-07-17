@@ -4,11 +4,12 @@ import sys
 DATA_PATH = 'raw_stats.txt'
 OUTPUT_PATH = 'haikyuu_players.csv'
 
-players = []
-with open(DATA_PATH, 'r') as f:
+def raw_to_dict(lines):
+    '''Return dictionary of player data from haikyuu raw data'''
+    players = []
     position = None
     player = {}
-    for line in f.readlines():
+    for line in lines:
         if line.strip(): # not an empty line
             if ('(' in line) and (')' in line):             # is a name
                 # save previous player
@@ -32,11 +33,17 @@ with open(DATA_PATH, 'r') as f:
                 else:                                       # is a stat
                     line = line.strip().split(' - ')
                     player[line[0]] = line[1]
+    return players
 
-# check output
-players = pd.DataFrame(players)
+
+
+with open(DATA_PATH, 'r') as f:
+    parsed_data =  raw_to_dict(f.readlines())
+
+# generate csv
+players = pd.DataFrame(parsed_data)
 players = players[['Name', 'School', 'Position', 'Game Sense', 
                    'Jumping', 'Power', 'Speed', 'Stamina', 
-                   'Technique']]
+                   'Technique']].set_index('Name').sort_index()
 
 players.to_csv(OUTPUT_PATH)
