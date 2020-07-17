@@ -1,6 +1,8 @@
 import pandas as pd
+import sys
 
 DATA_PATH = 'raw_stats.txt'
+OUTPUT_PATH = 'haikyuu_players.csv'
 
 players = []
 with open(DATA_PATH, 'r') as f:
@@ -33,6 +35,8 @@ with open(DATA_PATH, 'r') as f:
 
 # check output
 players = pd.DataFrame(players)
-print(players.shape) # TODO check if we captured all the player
-print(players.head())
-print(players.tail())
+players = players[['Name', 'School', 'Position', 'Game Sense', 
+                   'Jumping', 'Power', 'Speed', 'Stamina', 
+                   'Technique']]
+
+players.to_csv(OUTPUT_PATH)
