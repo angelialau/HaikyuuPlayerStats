@@ -7,8 +7,10 @@ import pandas as pd
 ########### Set up the chart
 # load data
 METRICS = ['Game Sense', 'Jumping', 'Power', 'Speed', 'Stamina', 'Technique']
-data = pd.read_csv('haikyuu_players.csv', index_col=0).head(10)
-data = data.sort_values('Position')[METRICS]
+data = pd.read_csv('haikyuu_players.csv', index_col=0)
+data = data[data.Position=='S']
+data['Total Score'] = data[METRICS].sum(axis=1)
+data = data.sort_values('Total Score', ascending=True)[METRICS] # descending order in viz
 
 # generate heatmap
 heatmap = go.Heatmap(z=data.values,
