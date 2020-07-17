@@ -1,11 +1,24 @@
 import pandas as pd
 import sys
 
-DATA_PATH = 'raw_stats.txt'
-OUTPUT_PATH = 'haikyuu_players.csv'
 
-def raw_to_dict(lines):
-    '''Return dictionary of player data from haikyuu raw data'''
+def clean_raw(input_path='raw_stats.txt',
+              output_path='haikyuu_players.csv'):
+    '''Parses raw player data from input_path and 
+    outputs csv of cleaned player data to specified output_dath'''
+    with open(input_path, 'r') as f:
+        df =  raw_lines_to_df(f.readlines())
+
+    col_order = ['Name', 'School', 'Position', 'Game Sense',
+                 'Jumping', 'Power', 'Speed', 'Stamina', 'Technique']
+    df = df[col_order].set_index('Name').sort_index() # clean df
+    df.to_csv(output_path)
+    print(f'Cleaned output to {output_path}...')
+
+
+
+def raw_lines_to_df(lines):
+    '''Return pandas dataframe of player data from lines of raw haikyuu data'''
     players = []
     position = None
     player = {}
@@ -33,17 +46,11 @@ def raw_to_dict(lines):
                 else:                                       # is a stat
                     line = line.strip().split(' - ')
                     player[line[0]] = line[1]
+    # generate df
+    players = pd.DataFrame(players)
+
     return players
 
 
-
-with open(DATA_PATH, 'r') as f:
-    parsed_data =  raw_to_dict(f.readlines())
-
-# generate csv
-players = pd.DataFrame(parsed_data)
-players = players[['Name', 'School', 'Position', 'Game Sense', 
-                   'Jumping', 'Power', 'Speed', 'Stamina', 
-                   'Technique']].set_index('Name').sort_index()
-
-players.to_csv(OUTPUT_PATH)
+if __name__ == "__main__":
+    clean_raw()
