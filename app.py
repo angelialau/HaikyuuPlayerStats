@@ -1,7 +1,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import plotly.express as px
+import plotly.graph_objects as go
 import pandas as pd
 
 ########### Set up the chart
@@ -11,15 +11,15 @@ data = pd.read_csv('haikyuu_players.csv', index_col=0).head(10)
 data = data.sort_values('Position')[METRICS]
 
 # generate heatmap
-fig = px.imshow(data.values,
-                labels=dict(x='Metric',y='Player'),
-                x=METRICS,
-                y=data.index)
-fig.update_xaxes(side="top", tickangle=0)
-fig.update_layout(margin = dict(t=20,r=20,b=20,l=20),
-                  width=700,
-                  height=800,
-                  autosize=False)
+fig = go.Figure(data=go.Heatmap(z=data.values,
+                                x=METRICS,
+                                y=data.index,
+                                xgap=.05,
+                                ygap=.05,
+                                zmin=1,
+                                zmax=5))
+fig.update_xaxes(side='top', title='Metrics')
+fig.update_yaxes(title='Player')
 
 
 ########### Initiate the app
