@@ -8,14 +8,22 @@ import pandas as pd
 # load data
 METRICS = ['Game Sense', 'Jumping', 'Power', 'Speed', 'Stamina', 'Technique']
 data = pd.read_csv('haikyuu_players.csv', index_col=0)
-data = data[data.Position=='S']
+selectedPosition = 'S'
+data = data[data.Position==selectedPosition]
 data['Total Score'] = data[METRICS].sum(axis=1)
-data = data.sort_values('Total Score', ascending=True)[METRICS] # descending order in viz
+data = data.sort_values('Total Score', ascending=True) # descending order in viz
+schools_matrix = [[data.loc[player, 'School'] for metric in METRICS] for player in data.index]
 
 # generate heatmap
-heatmap = go.Heatmap(z=data.values,
+heatmap = go.Heatmap(z=data[METRICS].values,
                      x=METRICS,
                      y=data.index,
+                     customdata=schools_matrix,
+                     hovertemplate="Player: %{y}<br>" \
+                                    + "School: %{customdata}<br>" \
+                                    + f"Position: {selectedPosition}<br>" \
+                                    + "%{x}: %{z}<br>" \
+                                    + "<extra></extra>",
                      xgap=2,ygap=2,
                      zmin=1,zmax=6,
                      colorscale=[[0.0, 'rgb(245,255,235)'],[0.2, 'rgb(245,255,235)'],
@@ -32,6 +40,7 @@ heatmap = go.Heatmap(z=data.values,
 fig = go.Figure(data=heatmap)
 fig.update_xaxes(side='top', title='Metrics')
 fig.update_yaxes(title='Player')
+fig.update_layout(height=700)
 
 
 ########### Initiate the app
