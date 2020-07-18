@@ -2,8 +2,8 @@ import pandas as pd
 import sys
 
 
-def clean_raw(input_path='raw_stats.txt',
-              output_path='haikyuu_players.csv'):
+def clean_raw(input_path='./data/raw_stats.txt',
+              output_path='./data/haikyuu_players.csv'):
     '''Parses raw player data from input_path and 
     outputs csv of cleaned player data to specified output_dath'''
     with open(input_path, 'r') as f:

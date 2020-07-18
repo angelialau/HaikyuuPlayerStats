@@ -6,8 +6,9 @@ import pandas as pd
 
 ########### Set up the chart
 # load data
+PLAYER_CSV = './data/haikyuu_players.csv'
 METRICS = ['Game Sense', 'Jumping', 'Power', 'Speed', 'Stamina', 'Technique']
-data = pd.read_csv('haikyuu_players.csv', index_col=0)
+data = pd.read_csv(PLAYER_CSV, index_col=0)
 selectedPosition = 'S'
 data = data[data.Position==selectedPosition]
 data['Total Score'] = data[METRICS].sum(axis=1)
