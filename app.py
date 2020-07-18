@@ -9,6 +9,7 @@ import pandas as pd
 PLAYER_CSV = './data/haikyuu_players.csv'
 METRICS = ['Game Sense', 'Jumping', 'Power', 'Speed', 'Stamina', 'Technique']
 data = pd.read_csv(PLAYER_CSV, index_col=0)
+POSITIONS = data.Position.unique()
 
 def filterDataByPosition(data, selectedPosition):
     '''Transforms data and returns the necessary data for the heatmap graph
@@ -29,37 +30,41 @@ def filterDataByPosition(data, selectedPosition):
     return filteredData
 
 
+def updatePositionHeatmap(data, selectedPosition):
+    filteredData = filterDataByPosition(data, selectedPosition)
+    heatmap = go.Heatmap(z=filteredData['z'],
+                         x=filteredData['x'],
+                         y=filteredData['y'],
+                         text=filteredData['scores'],
+                         customdata=filteredData['schools'],
+                         hovertemplate="Player: %{y}<br>" \
+                                        + "School: %{customdata}<br>" \
+                                        + f"Position: {selectedPosition}<br>" \
+                                        + "%{x}: %{z}<br>" \
+                                        + "Total Score: %{text}<br>" \
+                                        + "<extra></extra>",
+                         xgap=2,ygap=2,
+                         zmin=1,zmax=6,
+                         colorscale=[[0.0, 'rgb(245,255,235)'],[0.2, 'rgb(245,255,235)'],
+                                     [0.2, 'rgb(253,212,158)'],[0.4, 'rgb(253,212,158)'],
+                                     [0.4, 'rgb(253,141,60)'],[0.6, 'rgb(253,141,60)'],
+                                     [0.6, 'rgb(217,72,1)'],[0.8, 'rgb(217,72,1)'],
+                                     [0.8, 'rgb(127,39,4)'],[1.0, 'rgb(127,39,4)']
+                                     ],
+                         colorbar=dict(thickness=25,
+                                       tickvals=(1.5, 2.5, 3.5, 4.5, 5.5),
+                                       ticktext=(1,2,3,4,5),
+                                       )
+                         )
+    fig = go.Figure(data=heatmap)
+    fig.update_xaxes(side='top', title='Metrics')
+    fig.update_yaxes(title='Player')
+    fig.update_layout(height=700)
+    return fig
+
+
 # generate default heatmap
-selectedPosition = 'S'
-defaultData = filterDataByPosition(data, selectedPosition)
-heatmap = go.Heatmap(z=defaultData['z'],
-                     x=defaultData['x'],
-                     y=defaultData['y'],
-                     text = defaultData['scores'],
-                     customdata=defaultData['schools'],
-                     hovertemplate="Player: %{y}<br>" \
-                                    + "School: %{customdata}<br>" \
-                                    + f"Position: {selectedPosition}<br>" \
-                                    + "%{x}: %{z}<br>" \
-                                    + "Total Score: %{text}<br>" \
-                                    + "<extra></extra>",
-                     xgap=2,ygap=2,
-                     zmin=1,zmax=6,
-                     colorscale=[[0.0, 'rgb(245,255,235)'],[0.2, 'rgb(245,255,235)'],
-                                 [0.2, 'rgb(253,212,158)'],[0.4, 'rgb(253,212,158)'],
-                                 [0.4, 'rgb(253,141,60)'],[0.6, 'rgb(253,141,60)'],
-                                 [0.6, 'rgb(217,72,1)'],[0.8, 'rgb(217,72,1)'],
-                                 [0.8, 'rgb(127,39,4)'],[1.0, 'rgb(127,39,4)']
-                                 ],
-                     colorbar=dict(thickness=25,
-                                   tickvals=(1.5, 2.5, 3.5, 4.5, 5.5),
-                                   ticktext=(1,2,3,4,5),
-                                   )
-                     )
-fig = go.Figure(data=heatmap)
-fig.update_xaxes(side='top', title='Metrics')
-fig.update_yaxes(title='Player')
-fig.update_layout(height=700)
+defaultHeatmap = updatePositionHeatmap(data, POSITIONS[3])
 
 
 ########### Initiate the app
@@ -73,7 +78,7 @@ server = app.server
 app.layout = html.Div(children=[
     html.H1('Haikyuu!! Player Stats'),
     dcc.Graph(
-        figure=fig
+        figure=defaultHeatmap
     ),
     html.A('Read about this project', href='https://angelia.substack.com/p/project-idea-haikyuu-player-stats'),
     html.Br(),
