@@ -1,8 +1,16 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 import pandas as pd
+
+########### Initiate the app
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app.title = 'Haikyuu!! Stats'
+server = app.server
+
 
 ########### Set up the chart
 # load data
@@ -19,11 +27,17 @@ METRICS_TICKVALS = [val+0.5 for val in METRICS_TICKTEXT]
 DATA_CSV = './data/haikyuu_players.csv'
 DATA = pd.read_csv(DATA_CSV, index_col=0)
 POSITIONS = DATA.Position.unique()
+POSITION_LABELS = {
+    'S': 'Setter',
+    'Li': 'Libero',
+    'WS': 'Wing Spiker',
+    'MB': 'Middle Blocker'
+}
 
-def filterDataByPosition(data, selectedPosition):
+def filterDataByPosition(selectedPosition):
     '''Transforms data and returns the necessary data for the heatmap graph
     object, given the specified player position'''
-    data = data[data.Position==selectedPosition]
+    data = DATA[DATA.Position==selectedPosition]
     data['Total Score'] = data[METRICS].sum(axis=1)
     data = data.sort_values('Total Score', ascending=True) # descending order in viz
     score_matrix = [[data.loc[player, 'Total Score'] for metric in METRICS] for player in data.index]
@@ -39,8 +53,11 @@ def filterDataByPosition(data, selectedPosition):
     return filteredData
 
 
-def updatePositionHeatmap(data, selectedPosition):
-    filteredData = filterDataByPosition(data, selectedPosition)
+@app.callback(
+    Output('positionHeatmap', 'figure'),
+    [Input('positionDropdown', 'value')])
+def updatePositionHeatmap(selectedPosition):
+    filteredData = filterDataByPosition(selectedPosition)
     heatmap = {
         'type':'heatmap',
         'z':filteredData['z'],
@@ -50,7 +67,7 @@ def updatePositionHeatmap(data, selectedPosition):
         'customdata':filteredData['schools'],
         'hovertemplate':"Player: %{y}<br>" \
                         + "School: %{customdata}<br>" \
-                        + f"Position: {selectedPosition}<br>" \
+                        + f"Position: {POSITION_LABELS[selectedPosition]}<br>" \
                         + "%{x}: %{z}<br>" \
                         + "Total Score: %{text}<br>" \
                         + "<extra></extra>",
@@ -63,7 +80,7 @@ def updatePositionHeatmap(data, selectedPosition):
         }
 
     layout = {
-        'height': 700,
+        'height': 800,
         'xaxis': {'title': 'Metrics', 'side': 'top'},
         'yaxis': {'title': 'Player'}
         }
@@ -72,22 +89,19 @@ def updatePositionHeatmap(data, selectedPosition):
     return fig
 
 
-# generate default heatmap
-defaultHeatmap = updatePositionHeatmap(DATA, POSITIONS[3])
-
-
-########### Initiate the app
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-app.title = 'Haikyuu!! Stats'
-server = app.server
-
 
 ########### Set up the layout
 app.layout = html.Div(children=[
     html.H1('Haikyuu!! Player Stats'),
+    dcc.Dropdown(
+        # placeholder=['Select player position e.g. Setter'],
+        options=[{'label': POSITION_LABELS[pos], 'value': pos} for pos in POSITIONS],
+        value=POSITIONS[0],
+        id='positionDropdown'
+    ),
     dcc.Graph(
-        figure=defaultHeatmap
+        # figure=updatePositionHeatmap(POSITIONS[0]), # default heatmap
+        id='positionHeatmap'
     ),
     html.A('Read about this project', href='https://angelia.substack.com/p/project-idea-haikyuu-player-stats'),
     html.Br(),
