@@ -13,17 +13,21 @@ selectedPosition = 'S'
 data = data[data.Position==selectedPosition]
 data['Total Score'] = data[METRICS].sum(axis=1)
 data = data.sort_values('Total Score', ascending=True) # descending order in viz
+score_matrix = [[data.loc[player, 'Total Score'] for metric in METRICS] for player in data.index]
 schools_matrix = [[data.loc[player, 'School'] for metric in METRICS] for player in data.index]
+
 
 # generate heatmap
 heatmap = go.Heatmap(z=data[METRICS].values,
                      x=METRICS,
                      y=data.index,
+                     text = score_matrix,
                      customdata=schools_matrix,
                      hovertemplate="Player: %{y}<br>" \
                                     + "School: %{customdata}<br>" \
                                     + f"Position: {selectedPosition}<br>" \
                                     + "%{x}: %{z}<br>" \
+                                    + "Total Score: %{text}<br>" \
                                     + "<extra></extra>",
                      xgap=2,ygap=2,
                      zmin=1,zmax=6,
@@ -66,4 +70,4 @@ app.layout = html.Div(children=[
 )
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True, use_reloader=True)
