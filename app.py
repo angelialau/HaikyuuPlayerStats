@@ -9,20 +9,34 @@ import pandas as pd
 PLAYER_CSV = './data/haikyuu_players.csv'
 METRICS = ['Game Sense', 'Jumping', 'Power', 'Speed', 'Stamina', 'Technique']
 data = pd.read_csv(PLAYER_CSV, index_col=0)
+
+def filterDataByPosition(data, selectedPosition):
+    '''Transforms data and returns the necessary data for the heatmap graph
+    object, given the specified player position'''
+    data = data[data.Position==selectedPosition]
+    data['Total Score'] = data[METRICS].sum(axis=1)
+    data = data.sort_values('Total Score', ascending=True) # descending order in viz
+    score_matrix = [[data.loc[player, 'Total Score'] for metric in METRICS] for player in data.index]
+    school_matrix = [[data.loc[player, 'School'] for metric in METRICS] for player in data.index]
+    filteredData = {
+        'data': data,
+        'x': METRICS,
+        'y': data.index,
+        'z': data[METRICS].values,
+        'scores': score_matrix,
+        'schools': school_matrix
+    }
+    return filteredData
+
+
+# generate default heatmap
 selectedPosition = 'S'
-data = data[data.Position==selectedPosition]
-data['Total Score'] = data[METRICS].sum(axis=1)
-data = data.sort_values('Total Score', ascending=True) # descending order in viz
-score_matrix = [[data.loc[player, 'Total Score'] for metric in METRICS] for player in data.index]
-schools_matrix = [[data.loc[player, 'School'] for metric in METRICS] for player in data.index]
-
-
-# generate heatmap
-heatmap = go.Heatmap(z=data[METRICS].values,
-                     x=METRICS,
-                     y=data.index,
-                     text = score_matrix,
-                     customdata=schools_matrix,
+defaultData = filterDataByPosition(data, selectedPosition)
+heatmap = go.Heatmap(z=defaultData['z'],
+                     x=defaultData['x'],
+                     y=defaultData['y'],
+                     text = defaultData['scores'],
+                     customdata=defaultData['schools'],
                      hovertemplate="Player: %{y}<br>" \
                                     + "School: %{customdata}<br>" \
                                     + f"Position: {selectedPosition}<br>" \
@@ -70,4 +84,4 @@ app.layout = html.Div(children=[
 )
 
 if __name__ == '__main__':
-    app.run_server(debug=True, use_reloader=True)
+    app.run_server()
