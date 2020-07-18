@@ -6,10 +6,19 @@ import pandas as pd
 
 ########### Set up the chart
 # load data
-PLAYER_CSV = './data/haikyuu_players.csv'
 METRICS = ['Game Sense', 'Jumping', 'Power', 'Speed', 'Stamina', 'Technique']
-data = pd.read_csv(PLAYER_CSV, index_col=0)
-POSITIONS = data.Position.unique()
+METRICS_COLORSCALE = [
+    [0.0, 'rgb(245,255,235)'],[0.2, 'rgb(245,255,235)'],
+    [0.2, 'rgb(253,212,158)'],[0.4, 'rgb(253,212,158)'],
+    [0.4, 'rgb(253,141,60)'],[0.6, 'rgb(253,141,60)'],
+    [0.6, 'rgb(217,72,1)'],[0.8, 'rgb(217,72,1)'],
+    [0.8, 'rgb(127,39,4)'],[1.0, 'rgb(127,39,4)']
+]
+METRICS_TICKTEXT = [1,2,3,4,5]
+METRICS_TICKVALS = [val+0.5 for val in METRICS_TICKTEXT]
+DATA_CSV = './data/haikyuu_players.csv'
+DATA = pd.read_csv(DATA_CSV, index_col=0)
+POSITIONS = DATA.Position.unique()
 
 def filterDataByPosition(data, selectedPosition):
     '''Transforms data and returns the necessary data for the heatmap graph
@@ -32,39 +41,39 @@ def filterDataByPosition(data, selectedPosition):
 
 def updatePositionHeatmap(data, selectedPosition):
     filteredData = filterDataByPosition(data, selectedPosition)
-    heatmap = go.Heatmap(z=filteredData['z'],
-                         x=filteredData['x'],
-                         y=filteredData['y'],
-                         text=filteredData['scores'],
-                         customdata=filteredData['schools'],
-                         hovertemplate="Player: %{y}<br>" \
-                                        + "School: %{customdata}<br>" \
-                                        + f"Position: {selectedPosition}<br>" \
-                                        + "%{x}: %{z}<br>" \
-                                        + "Total Score: %{text}<br>" \
-                                        + "<extra></extra>",
-                         xgap=2,ygap=2,
-                         zmin=1,zmax=6,
-                         colorscale=[[0.0, 'rgb(245,255,235)'],[0.2, 'rgb(245,255,235)'],
-                                     [0.2, 'rgb(253,212,158)'],[0.4, 'rgb(253,212,158)'],
-                                     [0.4, 'rgb(253,141,60)'],[0.6, 'rgb(253,141,60)'],
-                                     [0.6, 'rgb(217,72,1)'],[0.8, 'rgb(217,72,1)'],
-                                     [0.8, 'rgb(127,39,4)'],[1.0, 'rgb(127,39,4)']
-                                     ],
-                         colorbar=dict(thickness=25,
-                                       tickvals=(1.5, 2.5, 3.5, 4.5, 5.5),
-                                       ticktext=(1,2,3,4,5),
-                                       )
-                         )
-    fig = go.Figure(data=heatmap)
-    fig.update_xaxes(side='top', title='Metrics')
-    fig.update_yaxes(title='Player')
-    fig.update_layout(height=700)
+    heatmap = {
+        'type':'heatmap',
+        'z':filteredData['z'],
+        'x':filteredData['x'],
+        'y':filteredData['y'],
+        'text':filteredData['scores'],
+        'customdata':filteredData['schools'],
+        'hovertemplate':"Player: %{y}<br>" \
+                        + "School: %{customdata}<br>" \
+                        + f"Position: {selectedPosition}<br>" \
+                        + "%{x}: %{z}<br>" \
+                        + "Total Score: %{text}<br>" \
+                        + "<extra></extra>",
+        'xgap':2,'ygap':2,
+        'zmin': min(METRICS_TICKTEXT),'zmax':max(METRICS_TICKTEXT)+1,
+        'colorscale':METRICS_COLORSCALE,
+        'colorbar': dict(thickness=25,
+                         ticktext=METRICS_TICKTEXT,
+                         tickvals=METRICS_TICKVALS),
+        }
+
+    layout = {
+        'height': 700,
+        'xaxis': {'title': 'Metrics', 'side': 'top'},
+        'yaxis': {'title': 'Player'}
+        }
+
+    fig = go.Figure(data=[heatmap], layout=layout)
     return fig
 
 
 # generate default heatmap
-defaultHeatmap = updatePositionHeatmap(data, POSITIONS[3])
+defaultHeatmap = updatePositionHeatmap(DATA, POSITIONS[3])
 
 
 ########### Initiate the app
