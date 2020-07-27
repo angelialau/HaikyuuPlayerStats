@@ -129,11 +129,11 @@ def filterDataBySchool(selectedSchool):
     Output('positionHeatmap', 'figure'),
     [Input('positionDropdown', 'value'),
      Input('filterRadio', 'value')])
-def updatePositionHeatmap(selectedPosition, filterType):
+def updateHeatmap(selectedVal, filterType):
     if filterType=='Position':
-        filteredData = filterDataByPosition(selectedPosition)
-    else:
-        filteredData = filterDataBySchool(selectedPosition)
+        filteredData = filterDataByPosition(selectedVal)
+    elif filterType=='School':
+        filteredData = filterDataBySchool(selectedVal)
     heatmap = {
         'type':'heatmap',
         'z':filteredData['z'],
