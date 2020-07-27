@@ -38,14 +38,21 @@ POSITION_LABELS = {
 ########### Set up the layout
 app.layout = html.Div(children=[
     html.H1('Haikyuu!! Player Stats'),
+    dcc.RadioItems(
+        options=[
+            {'label': 'Position', 'value': 'position'},
+            {'label': 'School', 'value': 'school'},
+            {'label': 'No filter', 'value': 'no_filter'},
+        ],
+        value='position',
+        labelStyle={'display': 'inline-block'}
+    ),
     dcc.Dropdown(
-        # placeholder=['Select player position e.g. Setter'],
         options=[{'label': POSITION_LABELS[pos], 'value': pos} for pos in POSITIONS],
         value=POSITIONS[0],
         id='positionDropdown'
     ),
     dcc.Graph(
-        # figure=updatePositionHeatmap(POSITIONS[0]), # default heatmap
         id='positionHeatmap',
         config={'displayModeBar': False}
     ),
