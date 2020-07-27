@@ -46,7 +46,8 @@ app.layout = html.Div(children=[
     ),
     dcc.Graph(
         # figure=updatePositionHeatmap(POSITIONS[0]), # default heatmap
-        id='positionHeatmap'
+        id='positionHeatmap',
+        config={'displayModeBar': False}
     ),
     html.A('Read about this project', href='https://angelia.substack.com/p/project-idea-haikyuu-player-stats'),
     html.Br(),
@@ -55,7 +56,6 @@ app.layout = html.Div(children=[
     html.A('LinkedIn', href='https://www.linkedin.com/in/angelia-lau/'),
     ]
 )
-
 
 
 def filterDataByPosition(selectedPosition):
@@ -114,4 +114,4 @@ def updatePositionHeatmap(selectedPosition):
 
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
