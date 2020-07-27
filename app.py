@@ -34,6 +34,30 @@ POSITION_LABELS = {
     'MB': 'Middle Blocker'
 }
 
+
+########### Set up the layout
+app.layout = html.Div(children=[
+    html.H1('Haikyuu!! Player Stats'),
+    dcc.Dropdown(
+        # placeholder=['Select player position e.g. Setter'],
+        options=[{'label': POSITION_LABELS[pos], 'value': pos} for pos in POSITIONS],
+        value=POSITIONS[0],
+        id='positionDropdown'
+    ),
+    dcc.Graph(
+        # figure=updatePositionHeatmap(POSITIONS[0]), # default heatmap
+        id='positionHeatmap'
+    ),
+    html.A('Read about this project', href='https://angelia.substack.com/p/project-idea-haikyuu-player-stats'),
+    html.Br(),
+    html.A('Github', href='https://github.com/angelialau/HaikyuuPlayerStats'),
+    html.Br(),
+    html.A('LinkedIn', href='https://www.linkedin.com/in/angelia-lau/'),
+    ]
+)
+
+
+
 def filterDataByPosition(selectedPosition):
     '''Transforms data and returns the necessary data for the heatmap graph
     object, given the specified player position'''
@@ -88,28 +112,6 @@ def updatePositionHeatmap(selectedPosition):
     fig = go.Figure(data=[heatmap], layout=layout)
     return fig
 
-
-
-########### Set up the layout
-app.layout = html.Div(children=[
-    html.H1('Haikyuu!! Player Stats'),
-    dcc.Dropdown(
-        # placeholder=['Select player position e.g. Setter'],
-        options=[{'label': POSITION_LABELS[pos], 'value': pos} for pos in POSITIONS],
-        value=POSITIONS[0],
-        id='positionDropdown'
-    ),
-    dcc.Graph(
-        # figure=updatePositionHeatmap(POSITIONS[0]), # default heatmap
-        id='positionHeatmap'
-    ),
-    html.A('Read about this project', href='https://angelia.substack.com/p/project-idea-haikyuu-player-stats'),
-    html.Br(),
-    html.A('Github', href='https://github.com/angelialau/HaikyuuPlayerStats'),
-    html.Br(),
-    html.A('LinkedIn', href='https://www.linkedin.com/in/angelia-lau/'),
-    ]
-)
 
 if __name__ == '__main__':
     app.run_server()
