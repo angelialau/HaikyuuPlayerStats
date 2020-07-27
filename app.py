@@ -36,30 +36,38 @@ POSITION_LABELS = {
 
 
 ########### Set up the layout
-app.layout = html.Div(children=[
+app.layout = html.Div(style={'width':'75%', 'margin':'auto'},children=[
     html.H1('Haikyuu!! Player Stats'),
-    dcc.RadioItems(
-        options=[
-            {'label': 'Position', 'value': 'Position'},
-            {'label': 'School', 'value': 'School'},
-            # {'label': 'No filter', 'value': 'no_filter'}, # TODO
-        ],
-        value='Position',
-        labelStyle={'display': 'inline-block'},
-        id='filterRadio'
-    ),
-    dcc.Dropdown( # TODO: set default values
-        id='positionDropdown'
-    ),
+    html.Div(children=[
+        html.H5('Filter by:'),
+        dcc.RadioItems(
+            options=[
+                {'label': 'Position', 'value': 'Position'},
+                {'label': 'School', 'value': 'School'},
+                # {'label': 'No filter', 'value': 'no_filter'}, # TODO
+            ],
+            value='Position',
+            labelStyle={'display': 'inline-block'},
+            id='filterRadio'
+        )
+    ]),
+    html.Div(children=[
+        html.H5('Options:'),
+        dcc.Dropdown( # TODO: set default values
+            id='positionDropdown'
+        )
+    ]),
     dcc.Graph(
         id='positionHeatmap',
         config={'displayModeBar': False}
     ),
-    html.A('Read about this project', href='https://angelia.substack.com/p/project-idea-haikyuu-player-stats'),
-    html.Br(),
-    html.A('Github', href='https://github.com/angelialau/HaikyuuPlayerStats'),
-    html.Br(),
-    html.A('LinkedIn', href='https://www.linkedin.com/in/angelia-lau/'),
+    html.Div(children=[
+        html.A('Read about this project', href='https://angelia.substack.com/p/project-idea-haikyuu-player-stats'),
+        html.Br(),
+        html.A('Github', href='https://github.com/angelialau/HaikyuuPlayerStats'),
+        html.Br(),
+        html.A('LinkedIn', href='https://www.linkedin.com/in/angelia-lau/'),
+    ]),
     ]
 )
 
@@ -163,4 +171,4 @@ def updateHeatmap(selectedVal, filterType):
 
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
