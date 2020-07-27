@@ -40,16 +40,15 @@ app.layout = html.Div(children=[
     html.H1('Haikyuu!! Player Stats'),
     dcc.RadioItems(
         options=[
-            {'label': 'Position', 'value': 'position'},
-            {'label': 'School', 'value': 'school'},
-            {'label': 'No filter', 'value': 'no_filter'},
+            {'label': 'Position', 'value': 'Position'},
+            {'label': 'School', 'value': 'School'},
+            # {'label': 'No filter', 'value': 'no_filter'}, # TODO
         ],
-        value='position',
-        labelStyle={'display': 'inline-block'}
+        value='Position',
+        labelStyle={'display': 'inline-block'},
+        id='filterRadio'
     ),
-    dcc.Dropdown(
-        options=[{'label': POSITION_LABELS[pos], 'value': pos} for pos in POSITIONS],
-        value=POSITIONS[0],
+    dcc.Dropdown( # TODO: set default values
         id='positionDropdown'
     ),
     dcc.Graph(
@@ -65,42 +64,85 @@ app.layout = html.Div(children=[
 )
 
 
+@app.callback(
+    Output('positionDropdown', 'options'),
+    [Input('filterRadio', 'value')])
+def updateDropdownOptions(filterType):
+    if filterType=='Position':
+        return [{'label': POSITION_LABELS[pos], 'value': pos} for pos in POSITIONS]
+    elif filterType=='School':
+        return [{'label': sch, 'value': sch} for sch in sorted(DATA.School.unique())]
+    return None
+
+
 def filterDataByPosition(selectedPosition):
     '''Transforms data and returns the necessary data for the heatmap graph
     object, given the specified player position'''
     data = DATA[DATA.Position==selectedPosition]
     data['Total Score'] = data[METRICS].sum(axis=1)
     data = data.sort_values('Total Score', ascending=True) # descending order in viz
-    score_matrix = [[data.loc[player, 'Total Score'] for metric in METRICS] for player in data.index]
-    school_matrix = [[data.loc[player, 'School'] for metric in METRICS] for player in data.index]
+    text_annot = []
+    for player in data.index:
+        player_entry = []
+        for metric in METRICS:
+            annot = f"School: {data.loc[player, 'School']}<br>"
+            annot += f"Position: {POSITION_LABELS[selectedPosition]}<br>"
+            annot += f"Total Score: {data.loc[player, 'Total Score']}<br>"
+            player_entry.append(annot)
+        text_annot.append(player_entry)
     filteredData = {
         'data': data,
         'x': METRICS,
         'y': data.index,
         'z': data[METRICS].values,
-        'scores': score_matrix,
-        'schools': school_matrix
+        'annot': text_annot
+    }
+    return filteredData
+
+
+def filterDataBySchool(selectedSchool):
+    '''Transforms data and returns the necessary data for the heatmap graph
+    object, given the specified school'''
+    data = DATA[DATA.School==selectedSchool]
+    data['Total Score'] = data[METRICS].sum(axis=1)
+    data = data.sort_values('Total Score', ascending=True) # descending order in viz
+    text_annot = []
+    for player in data.index:
+        player_entry = []
+        for metric in METRICS:
+            annot = f"School: {selectedSchool}<br>"
+            annot += f"Position: {POSITION_LABELS[data.loc[player, 'Position']]}<br>"
+            annot += f"Total Score: {data.loc[player, 'Total Score']}<br>"
+            player_entry.append(annot)
+        text_annot.append(player_entry)
+    filteredData = {
+        'data': data,
+        'x': METRICS,
+        'y': data.index,
+        'z': data[METRICS].values,
+        'annot': text_annot
     }
     return filteredData
 
 
 @app.callback(
     Output('positionHeatmap', 'figure'),
-    [Input('positionDropdown', 'value')])
-def updatePositionHeatmap(selectedPosition):
-    filteredData = filterDataByPosition(selectedPosition)
+    [Input('positionDropdown', 'value'),
+     Input('filterRadio', 'value')])
+def updatePositionHeatmap(selectedPosition, filterType):
+    if filterType=='Position':
+        filteredData = filterDataByPosition(selectedPosition)
+    else:
+        filteredData = filterDataBySchool(selectedPosition)
     heatmap = {
         'type':'heatmap',
         'z':filteredData['z'],
         'x':filteredData['x'],
         'y':filteredData['y'],
-        'text':filteredData['scores'],
-        'customdata':filteredData['schools'],
+        'text':filteredData['annot'],
         'hovertemplate':"Player: %{y}<br>" \
-                        + "School: %{customdata}<br>" \
-                        + f"Position: {POSITION_LABELS[selectedPosition]}<br>" \
+                        + "%{text}" \
                         + "%{x}: %{z}<br>" \
-                        + "Total Score: %{text}<br>" \
                         + "<extra></extra>",
         'xgap':2,'ygap':2,
         'zmin': min(METRICS_TICKTEXT),'zmax':max(METRICS_TICKTEXT)+1,
@@ -121,4 +163,4 @@ def updatePositionHeatmap(selectedPosition):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
