@@ -51,12 +51,10 @@ app.layout = html.Div(style={'width':'75%', 'margin':'auto'}, children=[
             id='filterRadio'
         )
     ]),
-    html.Div(children=[
-        html.H5('Options:'),
-        dcc.Dropdown( # TODO: set default values
-            id='positionDropdown'
-        )
-    ]),
+    html.Br(),
+    dcc.Dropdown( # TODO: set default values
+        id='positionDropdown'
+    ),
     dcc.Graph(
         id='positionHeatmap',
         config={'displayModeBar': False}
@@ -74,15 +72,16 @@ app.layout = html.Div(style={'width':'75%', 'margin':'auto'}, children=[
 
 @app.callback(
     [Output('positionDropdown', 'style'),
+     Output('positionDropdown', 'placeholder'),
      Output('positionDropdown', 'options')],
     [Input('filterRadio', 'value')])
 def updateDropdownOptions(filterType):
     if filterType=='Position':
-        return {'display':'block'}, [{'label': POSITION_LABELS[pos], 'value': pos} for pos in POSITIONS]
+        return {'display':'block'}, 'Select a position e.g. Setter', [{'label': POSITION_LABELS[pos], 'value': pos} for pos in POSITIONS]
     elif filterType=='School':
-        return {'display':'block'}, [{'label': sch, 'value': sch} for sch in sorted(DATA.School.unique())]
+        return {'display':'block'}, 'Select a school e.g. Karasuno', [{'label': sch, 'value': sch} for sch in sorted(DATA.School.unique())]
     elif filterType=='None':
-        return {'display':'none'}, [{'label': 'No options', 'value': 'None'}]
+        return {'display':'none'}, '', [{'label': 'No options', 'value': 'None'}]
 
 
 def filterDataByPosition(selectedPosition):
