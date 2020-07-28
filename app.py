@@ -44,7 +44,7 @@ app.layout = html.Div(style={'width':'75%', 'margin':'auto'}, children=[
             options=[
                 {'label': 'Position', 'value': 'Position'},
                 {'label': 'School', 'value': 'School'},
-                # {'label': 'No filter', 'value': 'no_filter'}, # TODO
+                {'label': 'No filter', 'value': 'None'}
             ],
             value='Position',
             labelStyle={'display': 'inline-block'},
@@ -73,14 +73,16 @@ app.layout = html.Div(style={'width':'75%', 'margin':'auto'}, children=[
 
 
 @app.callback(
-    Output('positionDropdown', 'options'),
+    [Output('positionDropdown', 'style'),
+     Output('positionDropdown', 'options')],
     [Input('filterRadio', 'value')])
 def updateDropdownOptions(filterType):
     if filterType=='Position':
-        return [{'label': POSITION_LABELS[pos], 'value': pos} for pos in POSITIONS]
+        return {'display':'block'}, [{'label': POSITION_LABELS[pos], 'value': pos} for pos in POSITIONS]
     elif filterType=='School':
-        return [{'label': sch, 'value': sch} for sch in sorted(DATA.School.unique())]
-    return None
+        return {'display':'block'}, [{'label': sch, 'value': sch} for sch in sorted(DATA.School.unique())]
+    elif filterType=='None':
+        return {'display':'none'}, [{'label': 'No options', 'value': 'None'}]
 
 
 def filterDataByPosition(selectedPosition):
@@ -133,6 +135,30 @@ def filterDataBySchool(selectedSchool):
     return filteredData
 
 
+def getAllData():
+    '''Returns all data ordered by total school'''
+    data = DATA.copy()
+    data['Total Score'] = data[METRICS].sum(axis=1)
+    data = data.sort_values('Total Score', ascending=True) # descending order in viz
+    text_annot = []
+    for player in data.index:
+        player_entry = []
+        for metric in METRICS:
+            annot = f"School: {data.loc[player, 'School']}<br>"
+            annot += f"Position: {POSITION_LABELS[data.loc[player, 'Position']]}<br>"
+            annot += f"Total Score: {data.loc[player, 'Total Score']}<br>"
+            player_entry.append(annot)
+        text_annot.append(player_entry)
+    filteredData = {
+        'data': data,
+        'x': METRICS,
+        'y': data.index,
+        'z': data[METRICS].values,
+        'annot': text_annot
+    }
+    return filteredData
+
+
 @app.callback(
     Output('positionHeatmap', 'figure'),
     [Input('positionDropdown', 'value'),
@@ -142,6 +168,8 @@ def updateHeatmap(selectedVal, filterType):
         filteredData = filterDataByPosition(selectedVal)
     elif filterType=='School':
         filteredData = filterDataBySchool(selectedVal)
+    elif filterType=='None':
+        filteredData = getAllData()
     heatmap = {
         'type':'heatmap',
         'z':filteredData['z'],
@@ -161,7 +189,7 @@ def updateHeatmap(selectedVal, filterType):
         }
 
     layout = {
-        'height': 10*len(filteredData['y']) | 400,
+        'height': 18*len(filteredData['y']) | 400,
         'xaxis': {'title': 'Metrics', 'side': 'top'},
         'yaxis': {'title': 'Player'}
         }
