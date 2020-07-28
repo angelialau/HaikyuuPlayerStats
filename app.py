@@ -36,7 +36,7 @@ POSITION_LABELS = {
 
 
 ########### Set up the layout
-app.layout = html.Div(style={'width':'75%', 'margin':'auto'},children=[
+app.layout = html.Div(style={'width':'75%', 'margin':'auto'}, children=[
     html.H1('Haikyuu!! Player Stats'),
     html.Div(children=[
         html.H5('Filter by:'),
@@ -161,7 +161,7 @@ def updateHeatmap(selectedVal, filterType):
         }
 
     layout = {
-        'height': 800,
+        'height': 10*len(filteredData['y']) | 400,
         'xaxis': {'title': 'Metrics', 'side': 'top'},
         'yaxis': {'title': 'Player'}
         }
